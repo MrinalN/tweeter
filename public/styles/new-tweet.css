@@ -1,0 +1,70 @@
+
+
+/* Individual tweet box layout and stylings below */
+
+#tweets-container {
+  border-style: solid;
+  padding: 1em;
+  margin-bottom: 0.5em;
+  display: flex;
+  flex-direction: column;
+}
+
+#tweets-container:hover {
+  box-shadow: 10px 10px 5px #888;
+  font-weight: 900;
+}
+
+
+#tweet-text {
+  background: none;
+  border: none;
+  border-bottom: #545149 solid 4px;
+  outline: none;
+}
+
+
+.tweet_header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tweet_footer {
+  font-size: small;
+  display: flex;
+  justify-content: space-between;
+}
+
+/*error messages*/
+
+.errors p {
+  border-style: double;
+  border-color: red;
+  padding: 1rem;
+  color: red;
+  display:flex;
+  justify-content:space-evenly;
+}
+
+/* #no_words {
+  display: none;
+  border-style: double;
+  border-color: red;
+  padding: 1rem;
+  color: red;
+  display:flex;
+  justify-content:space-evenly;
+} */
+
+
+/* Mobile Layout Start */
+@media (max-width: 767px) {
+
+}
+
+
+
+/* Desktop Size */
+@media only screen and (min-width: 1024px) {
+  
+}

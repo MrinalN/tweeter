@@ -1,29 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
+  
 
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-  </head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;1,700&display=swap">
 
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <nav>
-      <span>tweeter</span>
-    </nav>
+  <!-- link for emoticon database used -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
 
-    <!-- Page-specific (main) content here -->
-    <main class="container"></main>
-  </body>
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
+  <!-- External JS -->
+  <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/client.js"></script>
+
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+</head>
+
+<body>
+  <!-- Top nav bar (fixed) -->
+  <nav>
+    <span class='logo'>tweeter</span>
+    <span class='prompt'>Write a new tweet</span>
+  </nav>
+
+  <header class="profile-header">
+    <div class="profile-hex">
+        <img src="/images/profile-hex.png"> 
+    </div>
+
+    <div class="name">
+        <h2>Your Name</h2>
+    </div>
+</header>
+
+<main class="container">
+<section class = "errors">
+    
+  <p>
+    <i class="fas fa-exclamation-triangle"></i>
+   <span id="error-msg">Invalid input! Can't read blank tweets!</span> 
+    <i class="fas fa-exclamation-triangle"></i>
+  </p>
+
+</section>
+  <!-- Page-specific (main) content here -->
+ 
+  <form  class="new-tweet-typed" method="POST" action="/tweets">
+  
+    <label>What are you humming about?</label>
+
+  <textarea name="text" id="tweet-text"></textarea>
+
+    <section class="button-count">
+      <button type="submit">Tweet</button>
+      <output name="counter" class="counter" for="tweet-text">140</output>
+    </section>
+
+  </form>
+
+  <section id="tweets-box"></section>
+  <!-- <br> -->
+
+  <!-- <section id="tweets-container">
+    <article>
+
+      <header>
+          <i class="far fa-user-circle"></i>
+          <p>
+            @fakeHandle89
+          </p>
+      </header>
+
+      <p>
+        Just put in fake/dummy text where needed so that you have some content to visualize.
+      </p>
+      
+      <footer>
+        <p>10 days ago</p>
+        <p><i class="fas fa-retweet"></i> <i class="fas fa-flag"></i> <i class="fas fa-heart"></i></p>
+      </footer>
+
+    </article>
+  </section> -->
+
+
+
+  </main>
+</body>
+
 </html>

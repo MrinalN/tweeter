@@ -1,3 +1,7 @@
 node_modules/
 .env
 .DS_Store
+
+notes.html
+ajax-example.html
+more-posts.html
