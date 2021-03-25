@@ -18,8 +18,14 @@ function timeSince(timeStamp) {
   if (secondsPast < 60) {
     return secondsPast + ' seconds ago';
   }
+  if (secondsPast === 60) {
+    return 'a minute ago';
+  }
   if (secondsPast < 3600) {
     return parseInt(secondsPast / 60) + ' minutes ago';
+  }
+  if (secondsPast === 3600) {
+    return 'an hour ago';
   }
   if (secondsPast <= 86400) {
     return parseInt(secondsPast / 3600) + ' hours ago';
