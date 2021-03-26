@@ -17,8 +17,8 @@ Desktop screen preview
 !["Desktop screen preview"](https://github.com/MrinalN/tweeter/blob/master/docs/tweeter_desktop.png?raw=true)
  
 
-Iphone5 screen preview
-!["Iphone5 screen preview"](https://github.com/MrinalN/tweeter/blob/master/docs/tweeter_iphone.png?raw=true)
+Ipad screen preview
+!["Ipad screen preview"](https://github.com/MrinalN/tweeter/blob/master/docs/tweeter_ipad.png?raw=true)
 
 ## Dependencies
 
