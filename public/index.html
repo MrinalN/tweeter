@@ -51,61 +51,38 @@
     </div>
 
     <div class="name">
-        <h2>Your Name</h2>
+        <h2>Adele Noronha</h2>
     </div>
 </header>
 
-<main class="container">
-<section class = "errors">
-    
-  <p>
-    <i class="fas fa-exclamation-triangle"></i>
-   <span id="error-msg">Invalid input! Can't read blank tweets!</span> 
-    <i class="fas fa-exclamation-triangle"></i>
-  </p>
+  <main class="container">
+    <section class = "errors">
+        
+      <p>
+        <i class="fas fa-exclamation-triangle"></i>
+      <span id="error-msg">Invalid input! Can't read blank tweets!</span> 
+        <i class="fas fa-exclamation-triangle"></i>
+      </p>
 
-</section>
-  <!-- Page-specific (main) content here -->
- 
-  <form  class="new-tweet-typed" method="POST" action="/tweets">
-  
-    <label>What are you humming about?</label>
-
-  <textarea name="text" id="tweet-text"></textarea>
-
-    <section class="button-count">
-      <button type="submit">Tweet</button>
-      <output name="counter" class="counter" for="tweet-text">140</output>
     </section>
 
-  </form>
+    <!-- Page-specific (main) content here -->
+  
+    <form  class="new-tweet-typed" method="POST" action="/tweets">
+    
+      <label>What are you humming about?</label>
 
-  <section id="tweets-box"></section>
-  <!-- <br> -->
+      <textarea name="text" id="tweet-text"></textarea>
 
-  <!-- <section id="tweets-container">
-    <article>
+      <section class="button-count">
+        <button type="submit">Tweet</button>
+        <output name="counter" class="counter" for="tweet-text">140</output>
+      </section>
 
-      <header>
-          <i class="far fa-user-circle"></i>
-          <p>
-            @fakeHandle89
-          </p>
-      </header>
+    </form>
 
-      <p>
-        Just put in fake/dummy text where needed so that you have some content to visualize.
-      </p>
-      
-      <footer>
-        <p>10 days ago</p>
-        <p><i class="fas fa-retweet"></i> <i class="fas fa-flag"></i> <i class="fas fa-heart"></i></p>
-      </footer>
-
-    </article>
-  </section> -->
-
-
+    <!-- Tweets loaded into this section -->
+    <section id="tweets-box"></section>
 
   </main>
 </body>
