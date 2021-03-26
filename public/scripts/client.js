@@ -16,6 +16,8 @@
 
 
 //function to translate tweet timestamp
+
+
 function timeSince(timeStamp) {
   var now = new Date(),
     secondsPast = (now.getTime() - timeStamp) / 1000;
@@ -51,22 +53,18 @@ function timeSince(timeStamp) {
   }
 }
 
-// NOT USING error outputs function
-const errorOutputs = (input) => {
-  if (input.length === 0) {
-    return alert('Invalid input!');
-  } else if (input.length > 140) {
-    return alert('Exceeded 140 character limit!');
-  }
-};
 
 //creates tweet header
 const createHeader = (tweet) => {
   const $tweetHeader = $('<header>').addClass('tweet_header');
-  const $presetAvatar = $('<img>').attr('src', tweet.user.avatars);
-  const $presetUserHandle = $('<p>').text(tweet.user.handle);
+  // const $tweetSpanHolder = $('<span>').addClass('face-name');
+  const $presetAvatar = ($('<img>').attr('src', tweet.user.avatars));
+  const $presetUserName = $('<p id="user-name">').text(tweet.user.name);
+  const $presetUserHandle = $('<p id="user-handle">').text(tweet.user.handle);
 
   $tweetHeader.append($presetAvatar);
+  // $tweetHeader.append($tweetSpanHolder);
+  $tweetHeader.append($presetUserName);
   $tweetHeader.append($presetUserHandle);
 
   return $tweetHeader;
@@ -76,7 +74,7 @@ const createHeader = (tweet) => {
 const createFooter = (tweet) => {
   const $tweetFooter = $('<footer>').addClass('tweet_footer');
   const $presetTime = $('<time>').text(timeSince(tweet.created_at));
-  const $retweetFlagHeartIcons = $(`<p><i class="fas fa-retweet"></i> <i class="fas fa-flag"></i> <i class="fas fa-heart"></i></p>`);
+  const $retweetFlagHeartIcons = $(`<span class="icons"><p><i class="fas fa-retweet"></i> <i class="fas fa-flag"></i> <i class="fas fa-heart"></i></p></span>`);
 
   $tweetFooter.append($presetTime);
   $tweetFooter.append($retweetFlagHeartIcons);

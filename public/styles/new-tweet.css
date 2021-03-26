@@ -25,14 +25,30 @@
 
 
 .tweet_header {
+  /* border:dashed pink; */
   display: flex;
   justify-content: space-between;
 }
+
+ #user-name {
+  /* border:dashed red; */
+  margin-right: 11em;
+  /* display: flex;
+  align-self: flex-start; */
+} 
 
 .tweet_footer {
   font-size: small;
   display: flex;
   justify-content: space-between;
+}
+
+footer .icons:hover {
+  opacity: 8;
+}
+
+footer .icons{
+  opacity: .3;
 }
 
 /*error messages*/
