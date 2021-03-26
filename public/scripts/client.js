@@ -31,17 +31,23 @@ function timeSince(timeStamp) {
   if (secondsPast < 3600) {
     return parseInt(secondsPast / 60) + ' minutes ago';
   }
-  if (secondsPast === 3600) {
+  if (secondsPast === 3600 && secondsPast < 3660) {
     return 'an hour ago';
   }
-  if (secondsPast <= 86400) {
+  if (secondsPast < 86400) {
     return parseInt(secondsPast / 3600) + ' hours ago';
   }
-  if (secondsPast <= 259200) {
-    return parseInt(secondsPast / 86400) + ' months ago';
+  if (secondsPast === 86400 && secondsPast < 90000) {
+    return 'a day ago';
+  }
+  if (secondsPast < 604800) {
+    return parseInt(secondsPast / 86400) + ' days ago';
+  }
+  if (secondsPast === 604800) {
+    return 'a week ago';
   }
   if (secondsPast <= 31536000) {
-    return parseInt(secondsPast / 259200) + ' years ago';
+    return parseInt(secondsPast / 604800) + ' weeks ago';
   }
 }
 
