@@ -10,12 +10,13 @@
   flex-direction: column;
 }
 
+
 #tweets-container:hover {
   box-shadow: 10px 10px 5px #888;
   font-weight: 900;
 }
 
-
+/* form box styling */
 #tweet-text {
   background: none;
   border: none;
@@ -25,7 +26,6 @@
 
 
 .tweet_header {
-  /* border:dashed pink; */
   display: flex;
   justify-content: space-between;
 }
@@ -34,9 +34,10 @@
   display: flex;
   flex-direction: row;
 }
- /* #user-name {
-  margin-right: 11em;
-}  */
+
+#user-handle {
+  opacity: 0.7;
+} 
 
 .tweet_footer {
   font-size: small;
@@ -44,17 +45,8 @@
   justify-content: space-between;
 }
 
-/* icon animation
-footer .icons p:hover {
-  opacity: 8;
-}
-
-footer .icons p {
-  opacity: .3;
-} */
 
 /*error messages*/
-
 .errors p {
   border-style: double;
   border-color: red;
@@ -65,7 +57,8 @@ footer .icons p {
 }
 
 
-/* Mobile Layout Start */
+
+/* Small Screen Layout */
 @media (max-width: 999px) {
   .container .errors p {
     border-style: double;
@@ -76,8 +69,6 @@ footer .icons p {
     justify-content:space-evenly;
   }
 }
-
-
 
 /*** Tablet Size AND Desktop Size ***/
 @media only screen and (min-width: 1000px) {
