@@ -15,3 +15,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+# Acknowledgments
+
+Thanks for checking out my second project at Lighthouse Labs as a new Web Dev!
+Props to LHL for the practice and guidance. 
