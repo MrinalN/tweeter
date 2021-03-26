@@ -44,14 +44,14 @@
   justify-content: space-between;
 }
 
-/*icon animation*/
-footer .icons:hover {
+/* icon animation
+footer .icons p:hover {
   opacity: 8;
 }
 
-footer .icons{
+footer .icons p {
   opacity: .3;
-}
+} */
 
 /*error messages*/
 

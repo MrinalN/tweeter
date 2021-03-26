@@ -7,15 +7,8 @@
 
 // Test / driver code (temporary). Eventually will get this from the server.
 
-//NOTESS:::
-// delete unused functions
-
-// name on tweets beside image
-
 
 //function to translate tweet timestamp
-
-
 function timeSince(timeStamp) {
   var now = new Date(),
     secondsPast = (now.getTime() - timeStamp) / 1000;
@@ -63,8 +56,6 @@ const createHeader = (tweet) => {
   $avatarNameNest.append($presetAvatar);
   $avatarNameNest.append($presetUserName);
 
-  // $tweetHeader.append($presetAvatar);
-  // $tweetHeader.append($presetUserName);
   $tweetHeader.append($avatarNameNest);
   $tweetHeader.append($presetUserHandle);
 
@@ -75,10 +66,15 @@ const createHeader = (tweet) => {
 const createFooter = (tweet) => {
   const $tweetFooter = $('<footer>').addClass('tweet_footer');
   const $presetTime = $('<time>').text(timeSince(tweet.created_at));
-  const $retweetFlagHeartIcons = $(`<span class="icons"><p><i class="fas fa-retweet"></i> <i class="fas fa-flag"></i> <i class="fas fa-heart"></i></p></span>`);
+  //const $retweetFlagHeartIcons = $(`<span class="icons"><p><i class="fas fa-retweet"></i> <i class="fas fa-flag"></i> <i class="fas fa-heart"></i></p></span>`);
+  const $retweetFlagHeartIcons = $('<p><i class="fas fa-retweet"></i>  <i class="fas fa-flag"></i>  <i class="fas fa-heart"></i></p>');
+
+  const $iconsNest = $('<span>').addClass('"icons"');
+  $iconsNest.append($retweetFlagHeartIcons);
 
   $tweetFooter.append($presetTime);
-  $tweetFooter.append($retweetFlagHeartIcons);
+  // $tweetFooter.append($retweetFlagHeartIcons);
+  $tweetFooter.append($iconsNest);
 
   return $tweetFooter;
 };
