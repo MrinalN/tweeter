@@ -23,6 +23,7 @@ body {
   width: 80%;
   padding: 1em;
   margin:auto;
+  /* margin-top: 120px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -62,13 +63,17 @@ button {
 
 
 /*** Tablet Size AND Desktop Size ***/
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1000px) {
 
   .new-tweet-typed {
     /* border-style: dashed; */
-    margin-top: 10rem;
+    /* margin-top: 10rem; */
     width: 100%;
     /* margin-bottom: 0.5em; */
     /* margin: 5rem 5rem 5rem 0.5rem; */
+  }
+
+  .container {
+    margin-top: 120px;
   }
 }

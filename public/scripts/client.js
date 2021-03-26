@@ -9,8 +9,6 @@
 
 //NOTESS:::
 // delete unused functions
-// cheveron Animation
-// clean up timeStamp
 
 // name on tweets beside image
 
@@ -101,19 +99,17 @@ const createTweetElement = (tweet) => {
 
 
 $(document).ready(() => {
+  //error messages are hidden when the document is complete
   $('.errors p').slideUp(0);
- 
 
+
+  //Orgainizes tweet display in reverse and adds new tweet to top of pile;
   const renderTweets = (tweets) => {
     for (let tweet of tweets) {
       let readTweet = createTweetElement(tweet);
       $('#tweets-box').prepend(readTweet);
     }
-    // loops through tweets
-    // calls createTweetElement for each tweet
-    // takes return value and appends it to the tweets container
   };
-
 
   // renderTweets(data);
   const loadTweet = () => {
@@ -154,15 +150,12 @@ $(document).ready(() => {
         .then(res => {
           console.log('sent properly', res);
           loadTweet()
-          // $('#tweet-text').val('');
+          //resets form to blank and counter to 140
           document.getElementById('tweet-text').value = "";
           $('.counter').text('140')
-          //this is where the action for instant posting would go...
-          //then .text("")? to empty and counter reset?
         });
-
+      //hidden error messages reveal here
     } else if (tweetLength > 140) {
-      //  alert('Exceeded 140 character limit!');
       $('#error-msg').text('Too many words');
       $('.errors p').slideDown()
     } else {
@@ -180,98 +173,3 @@ $(document).ready(() => {
 
 });
 
-// ***
-// $(".new-tweet-typed").text('');
-// $('.counter').text('140')
-
-
-
-
-
-
-// const handleSumbitEvent = (event) => {
-//   event.preventDefault();
-//   let tweetLength = $("#tweet-text").val().length;
-//   console.log(tweetLength)
-//   if (tweetLength === 0) {
-//     $('#no_words').slideDown(7000);
-//     // return alert('Invalid input');
-//   } else if (tweetLength > 140) {
-//     return alert('Exceeded 140 character limit!');
-//     // $('#too_many_words').slideDown();
-//   } else {
-//     console.log('Tweet button clicked, performing ajax call...');
-//     const formData = $(".new-tweet-typed").serialize();
-//     $.ajax({
-//       url: "/tweets",
-//       method: 'POST',
-//       data: formData
-//     })
-//       .then(res => {
-//         console.log('sent properly', res);
-//         loadTweet()
-//         //this is where the action for instant posting would go...
-//         //then .text("")? to empty and counter reset?
-//       });
-//   }
-
-
-
-
-
-
-/*
-The user should be given an error that their tweet content is too long or that it is not present (ideally separate messages for each scenario)
-The form should not be cleared
-The form should not submit */
-
-// if('.new-tweet-typed' === "") {
-//   $("<div title='Error'>Invalid tweet. Try again!</div>").dialog();
-// }
-// if('.new-tweet-typed'.length > 140) {
-//   $("<div title='Error'>Tweet too long. Please keep to 140 characters.</div>").dialog();
-// }
-
-
-
-// const $newTweetIconHeader = $('<header class="profile-icon">')
-    // const $newTweetIcon = $('<i class="far fa-user-circle">')
-
-
-    // const $tweetMessage = $('<p>')
-    // $tweetMessage.append(`${tweet.content.text}`)
-
-    // const $tweetFooter = $('<footer>')
-    // $tweetFooter.append(`${tweet.created_at}`)
-    // $tweetFooter.append(`<p><i class="fas fa-retweet"></i><i class="fas fa-flag"></i><i class="fas fa-heart"></i></p>`)
-
-
-    // $tweet.append($newTweetArticle)
-    // $tweet.append($newTweetIconHeader)
-    // $tweet.append($newTweetIcon)
-    // $tweet.append($tweetMessage)
-    // $tweet.append($tweetFooter)
-
-    //   const $tweet = `
-    // <section id="tweets-container">
-    // <article>
-    //   <header>
-    //     <div class="profile-icon">
-    //       <i class="far fa-user-circle"></i>
-    //     </div>
-    //   </header>
-
-    //   <p>
-    //   ${tweet.user.handle}
-    //   </p>
-
-    //   <p>
-    //   ${tweet.content.text}
-    //   </p>
-
-    //   <footer>
-    //     <p>10 Days Ago</p>
-    //     <p><i class="fas fa-retweet"></i> <i class="fas fa-flag"></i> <i class="fas fa-heart"></i></p>
-    //   </footer>
-    // </article>
-    // </section>`

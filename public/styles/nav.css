@@ -16,7 +16,7 @@ nav .prompt:hover{
 }
 
 /* Mobile Layout Start */
-@media (max-width: 767px) {
+@media (max-width: 999px) {
 nav{
   height: 120px;
   /* background-color: #4056A1; */
@@ -33,7 +33,7 @@ nav{
 }
 
 /* Tablet Size AND Desktop Size */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1000px) {
 
   nav{
     height: 120px;
