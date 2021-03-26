@@ -70,7 +70,7 @@
   }
 }
 
-/*** Tablet Size AND Desktop Size ***/
+/*** Tablet Size to Desktop Size ***/
 @media only screen and (min-width: 1000px) {
   .container .errors p {
     border-style: double;
