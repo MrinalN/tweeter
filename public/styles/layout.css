@@ -23,7 +23,6 @@ body {
   width: 80%;
   padding: 1em;
   margin:auto;
-  /* margin-top: 120px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
