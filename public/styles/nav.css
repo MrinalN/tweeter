@@ -11,7 +11,7 @@ nav {
 }
 
 nav .prompt:hover{
-  color:#f89832;
+  color: #4056A1;
   font-weight: 700;
 }
 
@@ -47,6 +47,10 @@ nav{
     width: 100%; /* Full width */
   }
 
+  nav .prompt:hover{
+    color:#f89832;
+    font-weight: 700;
+  }
 }
 
 
