@@ -1,16 +1,7 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
-
-// Test / driver code (temporary). Eventually will get this from the server.
-
 
 //function to translate tweet timestamp
 function timeSince(timeStamp) {
-  var now = new Date(),
+  let now = new Date(),
     secondsPast = (now.getTime() - timeStamp) / 1000;
   if (secondsPast < 5) {
     return 'Just now';
@@ -80,10 +71,8 @@ const createFooter = (tweet) => {
 //creates full tweet post, combining user input text and header + footer
 const createTweetElement = (tweet) => {
   const $tweet = $('<section id="tweets-container">');
-  // const $newTweetArticle = $('<article>');
   const $tweetMessage = $('<p>').text(tweet.content.text);
 
-  // $tweet.append($newTweetArticle);
   $tweet.append(createHeader(tweet));
   $tweet.append($tweetMessage);
   $tweet.append(createFooter(tweet));
@@ -93,14 +82,11 @@ const createTweetElement = (tweet) => {
 
 
 
-
-
 $(document).ready(() => {
   //error messages are hidden when the document is complete
   $('.errors p').slideUp(0);
 
-
-  //Orgainizes tweet display in reverse and adds new tweet to top of pile;
+  //Sort through stored tweet array. Sets data into createTweetElement function. Prepends vs Appends.
   const renderTweets = (tweets) => {
     for (let tweet of tweets) {
       let readTweet = createTweetElement(tweet);
@@ -108,35 +94,37 @@ $(document).ready(() => {
     }
   };
 
-  // renderTweets(data);
+  // gathers stored tweet array. Note: singular name.
   const loadTweet = () => {
     $.ajax({
       url: "/tweets",
       method: 'GET'
     })
+    //creates single new tweet and sets it to the end of the array. No refresh required.
       .then(res => {
-        console.log(res);
         let readTweet = createTweetElement(res[res.length - 1]);
         $('#tweets-box').prepend(readTweet);
       });
   };
 
+  //renders incoming tweet data. Note: plural name.
   const loadTweets = () => {
     $.ajax({
       url: "/tweets",
       method: 'GET'
     })
       .then(res => {
-        console.log(res);
         renderTweets(res);
       });
   };
 
+  //
   const handleSumbitEvent = (event) => {
     event.preventDefault();
     let tweetLength = $("#tweet-text").val().length;
+    //if tweet meets validation...
     if (tweetLength > 0 && tweetLength < 140) {
-      $('.errors p').slideUp()
+      $('.errors p').slideUp();
       console.log('Tweet button clicked, performing ajax call...');
       const formData = $(".new-tweet-typed").serialize();
       $.ajax({
@@ -146,21 +134,21 @@ $(document).ready(() => {
       })
         .then(res => {
           console.log('sent properly', res);
-          loadTweet()
+          loadTweet();
           //resets form to blank and counter to 140
           document.getElementById('tweet-text').value = "";
-          $('.counter').text('140')
+          $('.counter').text('140');
         });
       //hidden error messages reveal here
     } else if (tweetLength > 140) {
       $('#error-msg').text('Too many words');
-      $('.errors p').slideDown()
+      $('.errors p').slideDown();
     } else {
       $('#error-msg').text('Invalid Entry!');
-      $('.errors p').slideDown()
+      $('.errors p').slideDown();
     }
 
-  }
+  };
 
   $('.new-tweet-typed').on('submit', handleSumbitEvent);
 
