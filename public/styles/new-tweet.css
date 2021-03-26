@@ -30,9 +30,13 @@
   justify-content: space-between;
 }
 
- #user-name {
+.avatar-name-nest {
+  display: flex;
+  flex-direction: row;
+}
+ /* #user-name {
   margin-right: 11em;
-} 
+}  */
 
 .tweet_footer {
   font-size: small;

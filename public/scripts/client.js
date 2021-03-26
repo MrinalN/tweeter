@@ -55,14 +55,17 @@ function timeSince(timeStamp) {
 //creates tweet header
 const createHeader = (tweet) => {
   const $tweetHeader = $('<header>').addClass('tweet_header');
-  // const $tweetSpanHolder = $('<span>').addClass('face-name');
   const $presetAvatar = ($('<img>').attr('src', tweet.user.avatars));
   const $presetUserName = $('<p id="user-name">').text(tweet.user.name);
   const $presetUserHandle = $('<p id="user-handle">').text(tweet.user.handle);
 
-  $tweetHeader.append($presetAvatar);
-  // $tweetHeader.append($tweetSpanHolder);
-  $tweetHeader.append($presetUserName);
+  const $avatarNameNest = $('<div>').addClass('avatar-name-nest');
+  $avatarNameNest.append($presetAvatar);
+  $avatarNameNest.append($presetUserName);
+
+  // $tweetHeader.append($presetAvatar);
+  // $tweetHeader.append($presetUserName);
+  $tweetHeader.append($avatarNameNest);
   $tweetHeader.append($presetUserHandle);
 
   return $tweetHeader;
@@ -83,10 +86,10 @@ const createFooter = (tweet) => {
 //creates full tweet post, combining user input text and header + footer
 const createTweetElement = (tweet) => {
   const $tweet = $('<section id="tweets-container">');
-  const $newTweetArticle = $('<article>');
+  // const $newTweetArticle = $('<article>');
   const $tweetMessage = $('<p>').text(tweet.content.text);
 
-  $tweet.append($newTweetArticle);
+  // $tweet.append($newTweetArticle);
   $tweet.append(createHeader(tweet));
   $tweet.append($tweetMessage);
   $tweet.append(createFooter(tweet));
