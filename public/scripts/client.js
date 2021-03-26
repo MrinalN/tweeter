@@ -7,6 +7,13 @@
 
 // Test / driver code (temporary). Eventually will get this from the server.
 
+//NOTESS:::
+// delete unused functions
+// cheveron Animation
+// clean up timeStamp
+
+// name on tweets beside image
+
 
 //function to translate tweet timestamp
 function timeSince(timeStamp) {
